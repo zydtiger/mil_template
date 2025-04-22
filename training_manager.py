@@ -62,7 +62,8 @@ class TrainingManager:
 
             # Forward pass with both features and masks
             predictions, attention_weights = self.model(features, masks)
-            predictions = predictions.squeeze()
+            predictions = predictions.view(-1)
+            labels = labels.view(-1)
             loss = self.criterion(predictions, labels)
 
             loss.backward()
@@ -116,7 +117,8 @@ class TrainingManager:
 
                 # Forward pass with both features and masks
                 predictions, attention_weights = self.model(features, masks)
-                predictions = predictions.squeeze()
+                predictions = predictions.view(-1)
+                labels = labels.view(-1)
                 loss = self.criterion(predictions, labels)
 
                 val_loss += loss.item()
