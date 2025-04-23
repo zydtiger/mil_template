@@ -106,7 +106,7 @@ The training process generates:
 
 The project expects data in JSON format with the following structure:
 
-```json
+```
 [
   {
     "name": "patient_id",
