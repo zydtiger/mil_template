@@ -43,7 +43,26 @@ This project implements an Attention-based Multiple Instance Learning model for 
      - Early stopping
      - TensorBoard logging
 
-6. `main.py`
+6. `early_stopping.py`
+
+   - Implements early stopping mechanism to prevent overfitting
+   - Features:
+     - Configurable patience and minimum delta
+     - Tracks and saves best model state
+     - Monitors either validation loss or accuracy
+     - Maintains copy of best model weights
+
+7. `vis_utils.py`
+
+   - Provides visualization and evaluation utilities
+   - Includes:
+     - Model evaluation metrics calculation
+     - Confusion matrix visualization
+     - ROC curve plotting with AUC score
+     - Attention weights visualization
+     - Comprehensive model performance analysis
+
+8. `main.py`
    - Entry point for training and evaluation
    - Sets up hyperparameters and model configuration
    - Initializes training components
